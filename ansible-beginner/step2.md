@@ -17,11 +17,24 @@ controller_node ansible_connection=local
 EOF
 ```{{execute}}
 
-Check the content of the inventory file `~/learn-ansible/inventory/hosts`{{open}}
+Check the content of the inventory file `learn-ansible/inventory/hosts`{{open}}
 
-### Run our first ansible command
+### Run our first ansible `PING` command
 
-Check ansible controller_node facts
+
+`ansible -m ping all`{{execute}}
+
+```
+$ ansible -m ping all
+controller_node | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+```
+
+### Host facts
+
+Check ansible `controller_node` facts:
 
 `ansible controller_node -i inventory -m setup`{{execute}}
 
