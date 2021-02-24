@@ -12,36 +12,30 @@ Now create a simple inventory file as inventory/hosts with the following content
 
 ```
 cat << EOF > inventory/hosts
+[runner]
 controller_node ansible_connection=local
-
 EOF
 ```{{execute}}
 
-Check the content of the inventory file `inventory/hosts`{{open}}
+Check the content of the inventory file `~/learn-ansible/inventory/hosts`{{open}}
 
 ### Run our first ansible command
 
-Check ansible facts
-`ansible controller_node -i inventory -m setup`
+Check ansible controller_node facts
 
+`ansible controller_node -i inventory -m setup`{{execute}}
 
+```
+$ ansible controller_node -i inventory -m setup
+controller_node | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.17.0.28"
+        ], 
+        "ansible_all_ipv6_addresses": [], 
+        ...
+```
 
+Get inventory hosts list
 
-
-`localhost`{{copy}}
-
-
-host1.cloud.ws.afnog.org
-host2.cloud.ws.afnog.org
-To reference inventory hosts, you supply a host pattern to the ansible command. Ansible has a --list-hosts option which can be useful for clarifying which managed hosts are referenced by the host pattern in an ansible command.
-
-The most basic host pattern is the name for a single managed host listed in the inventory file. This specifies that the host will be the only one in the inventory file that will be acted upon by the ansible command. Run:
-
-[ansible@control ~]$ ansible "host1.cloud.ws.afnog.org" -i ~/ansible-files/inventory --list-hosts
-
-  hosts (1):
-    host1.cloud.ws.afnog.org
-An inventory file can contain a lot more information, it can organize your hosts in groups or define variables. You will use grouping most of the times, change your inventory file to look like this:
-
-[webserver]
-host1.cloud.ws.afnog.org
+`ansible all -i inventory --list-hosts`{{execute}}
