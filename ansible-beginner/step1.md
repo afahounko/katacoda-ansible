@@ -1,36 +1,24 @@
-A Katacoda scenario is a series of Markdown files, bash scripts and a JSON file to define how your scenario should be configured, the text for the scenario and any automation required.
+Check the prerequisites and create our working directory to organise our ansible roles and playbooks.
 
-## Check the Prerequisites
+## Prerequisites
 
-Check if `ansible` is installed with the following command:
+Check the version of `ansible`  with the following command:
 
 `ansible --version`{{execute}}
 
-You will see the version of Ansible as well as the `config file` in use by default.
+You will see the version of Ansible
+```
+$ ansible --version
+ansible 1.9.6
+  configured module search path = None
+```
 
+### Working directory
 
-Within the repository, you will see a set of examples of implementing various Katacoda functionality.
+Let's organise our work by creating our working directory
 
-The scenario you are currently reading is in the directory `ls -lha katacoda-scenario-examples/create-scenario-101`{{execute}}. The directory name is what defines the URL.
+`mkdir  learn-ansible`{{execute}}
 
-An example of the current step is `katacoda-scenario-examples/create-scenario-101/step1.md`{{open}}
+`cd  learn-ansible`{{execute}}
 
-All the steps are collected via a JSON file, for example, `katacoda-scenario-examples/create-scenario-101/index.json`{{open}}.
-
-The JSON file defines the scenario title, the description, steps order, the UI layout and environment. You can find more about the layouts within our scenarios at [katacoda.com/docs/scenarios/layouts](https://katacoda.com/docs/scenarios/layouts) and environments at [katacoda.com/docs/scenarios/environments](https://katacoda.com/docs/scenarios/environments).
-
-
-
-
-Check the Prerequisites
-Most prerequisite tasks have already been done for you:
-
-Ansible software is installed
-SSH connection and keys are configured
-sudo has been configured on the managed hosts to run commands that require root privileges.
-Okay, let’s get started. Make sure you are logged-in as root on control.cloud.ws.afnog.org and check Ansible has been installed correctly:
-
-[root@control ~]# ansible --version
-ansible 2.8.0
-  config file = /etc/ansible/ansible.cfg
-[...]
+Now we are ready to start our workshop.
