@@ -16,17 +16,17 @@ EOF
 
 Check the content of the config file `learn-ansible/ansible.cfg`{{open}}
 
+Run again the version of `ansible` and check the path of the config file in use
 
-On control.cloud.ws.afnog.org 1 as ansible create the file ~/ansible-files/ansible.cfg with the following content:
-[defaults]
-inventory=/home/ansible/ansible-files/inventory
-Check with ansible --version, first from ansible’s home directory and then from ~/ansible-files/. You’ll notice on the second line of the output that, when run from ~/ansible-files/, your personal config settings override the settings from the main config file.
-From ~/ansible-files/ run ansible all --list-hosts.
-Your Ansible inventory was used without providing the -i option. To double-check, run the command again from outside ~/ansible-files/:
+`ansible --version`{{execute}}
 
-[ansible@control-6656 ~]$ ansible all --list-hosts
- 
- [WARNING]: provided hosts list is empty, only localhost is available. Note that
-the implicit localhost does not match 'all'
+Run all the previous commands without specifying the inventory file
 
-  hosts (0):
+`ping` command:
+
+`ansible all -m ping`{{execute}}
+
+`setup` for the controller node `facts`:
+
+`ansible controller_node -m setup`{{execute}}
+

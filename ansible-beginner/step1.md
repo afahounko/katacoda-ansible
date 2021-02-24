@@ -2,6 +2,14 @@ Check the prerequisites and create our working directory to organise our ansible
 
 ## Prerequisites
 
+Upgrade python `pip`
+
+`pip3 install --upgrade pip`{{execute}}
+
+Install `ansible` package
+
+`pip3 install ansible`{{execute}}
+
 Check the version of `ansible`  with the following command:
 
 `ansible --version`{{execute}}
@@ -9,8 +17,12 @@ Check the version of `ansible`  with the following command:
 You will see the version of Ansible
 ```
 $ ansible --version
-ansible 1.9.6
-  configured module search path = None
+ansible 2.10.6
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.8/dist-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.8.6 (default, Oct  6 2020, 03:22:36) [GCC 7.5.0]
 ```
 
 ### Working directory

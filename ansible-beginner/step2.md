@@ -19,20 +19,20 @@ EOF
 
 Check the content of the inventory file `learn-ansible/inventory/hosts`{{open}}
 
-### Run our first ansible `PING` command
+### Run our first ansible ad-hoc command `PING`
 
 
-`ansible -m ping all`{{execute}}
+`ansible all -i inventory -m ping`{{execute}}
 
 ```
-$ ansible -m ping all
+$ ansible all -i inventory -m ping
 controller_node | success >> {
     "changed": false, 
     "ping": "pong"
 }
 ```
 
-### Host facts
+### Inventory host facts
 
 Check ansible `controller_node` facts:
 
