@@ -6,7 +6,7 @@ To use the ansible command for host management, you need to provide an inventory
 
 Create a directory for your Ansible inventory:
 
-`mkdir  inventory`{{execute}}
+`mkdir  inventory`{{execute T2}}
 
 Now create a simple inventory file as inventory/hosts with the following content:
 
@@ -22,7 +22,7 @@ Check the content of the inventory file `learn-ansible/inventory/hosts`{{open}}
 ### Run our first ansible ad-hoc command `PING`
 
 
-`ansible all -i inventory -m ping`{{execute}}
+`ansible all -i inventory -m ping`{{execute T2}}
 
 ```
 $ ansible all -i inventory -m ping
@@ -36,7 +36,7 @@ controller_node | success >> {
 
 Check ansible `controller_node` facts:
 
-`ansible controller_node -i inventory -m setup`{{execute}}
+`ansible controller_node -i inventory -m setup`{{execute T2}}
 
 ```
 $ ansible controller_node -i inventory -m setup
@@ -51,4 +51,4 @@ controller_node | success >> {
 
 Get inventory hosts list
 
-`ansible all -i inventory --list-hosts`{{execute}}
+`ansible all -i inventory --list-hosts`{{execute T2}}

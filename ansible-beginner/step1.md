@@ -29,8 +29,8 @@ ansible 2.10.6
 
 Let's organise our work by creating our working directory
 
-`mkdir  learn-ansible`{{execute}}
+`mkdir  learn-ansible`{{execute T2}}
 
-`cd  learn-ansible`{{execute}}
+`cd  learn-ansible`{{execute T2}}
 
 Now we are ready to start our workshop.

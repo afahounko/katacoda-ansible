@@ -11,22 +11,22 @@ cat << EOF > ansible.cfg
 [defaults]
 inventory=${PWD}/inventory
 EOF
-```{{execute}}
+```{{execute T2}}
 
 
 Check the content of the config file `learn-ansible/ansible.cfg`{{open}}
 
 Run again the version of `ansible` and check the path of the config file in use
 
-`ansible --version`{{execute}}
+`ansible --version`{{execute T2}}
 
 Run all the previous commands without specifying the inventory file
 
 `ping` command:
 
-`ansible all -m ping`{{execute}}
+`ansible all -m ping`{{execute T2}}
 
 `setup` for the controller node `facts`:
 
-`ansible controller_node -m setup`{{execute}}
+`ansible controller_node -m setup`{{execute T2}}
 
