@@ -13,7 +13,7 @@ Now create a simple inventory file as inventory/hosts with the following content
 ```
 cat << EOF > inventory/hosts
 [runner]
-controller_node ansible_connection=local
+controller_node ansible_connection=local ansible_python_interpreter=/usr/bin/python3
 EOF
 ```{{execute}}
 
